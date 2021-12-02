@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body onload="refresh()">
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p id="p1">Player 1</p>
+        <img class="img1" src="images/dice6.png">
+      </div>
+
+      <div class="dice">
+        <p id="p2">Player 2</p>
+        <img class="img2" src="images/dice6.png">
+      </div>
+
+    </div>
+<script>
+    function refresh()
+    {
+        var v1=Math.random()*6;
+        v1=Math.floor(v1)+1;
+        var v2=Math.random()*6;
+        v2=Math.floor(v2)+1;
+document.querySelector('.img1').setAttribute("src","./images/dice"+v1+".png");
+document.querySelector('.img2').setAttribute("src","./images/dice"+v2+".png");
+
+if(v1>v2)
+{
+    document.getElementById("p1").innerHTML+="Wins!";
+    document.getElementById("p2").innerHTML+="Lose!";
+}else if(v2>v1)
+{
+    document.getElementById("p1").innerHTML+="Lose!";
+    document.getElementById("p2").innerHTML+="Wins!";
+}
+else
+{
+    document.getElementById("p1").innerHTML+="DRAW!!";
+    document.getElementById("p2").innerHTML+="DRAW!!";
+
+}
+
+
+    }
+</script>
+
+  </body>
+
+  <footer>
+    www 🎲 Game Plaza 🎲 com
+  </footer>
+</html>
